@@ -39,16 +39,18 @@ possibleWaysToWin.forEach(cells =>{
   if(cells.every(cell => cell === "X")) setWinner("X");
 });
 
-  checkDraw();
+ 
 
   }
   const checkDraw = () =>{
-    if(board.every(item => item !== "")){
+    if(board.every(item => item !== "")&& winner=== null){
       setWinner("E");
     }
   }
 
   useEffect(checkWinner,[board]);
+
+  checkDraw();
 
   const resetGame = () => {
     setCurrentPlayer("O");
